@@ -1,0 +1,138 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 1rem;
+  background: linear-gradient(135deg, #e0f2fe, #fef9c3);
+  min-height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+  perspective: 1000px;
+}
+
+h2 {
+  font-size: 2.8rem;
+  color: #0f172a;
+  margin-bottom: 2rem;
+  text-shadow: 1px 1px 0 #fff, 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-container {
+  background: #f9fafb;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 2.5rem;
+  transform-style: preserve-3d;
+  transform: rotateX(0deg);
+  transition: transform 0.4s ease;
+}
+
+.form-container:hover {
+  transform: rotateX(2deg);
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: none;
+  border-radius: 10px;
+  background: #e0f2fe;
+  font-size: 1rem;
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+
+input:focus,
+textarea:focus {
+  box-shadow: 0 0 10px rgba(34, 197, 94, 0.3);
+  transform: scale(1.02);
+  outline: none;
+}
+
+button {
+  background: linear-gradient(to right, #3b82f6, #60a5fa);
+  color: #fff;
+  border: none;
+  padding: 0.9rem 2rem;
+  font-size: 1rem;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 6px 12px rgba(59, 130, 246, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 10px 20px rgba(59, 130, 246, 0.4);
+}
+
+.note {
+  background: linear-gradient(145deg, #fef3c7, #fde68a);
+  border-radius: 12px;
+  box-shadow: 8px 12px 25px rgba(0, 0, 0, 0.15);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  width: 100%;
+  max-width: 600px;
+  transform-style: preserve-3d;
+  transform: rotateY(0deg);
+  transition: transform 0.4s ease, box-shadow 0.3s ease;
+}
+
+.note:hover {
+  transform: rotateY(5deg) translateY(-3px);
+  box-shadow: 12px 20px 35px rgba(0, 0, 0, 0.2);
+}
+
+.note h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  color: #78350f;
+  text-shadow: 1px 1px 0 #fff;
+}
+
+.note p {
+  color: #4b5563;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.note button {
+  margin-right: 0.5rem;
+  margin-top: 0.5rem;
+  background: linear-gradient(to right, #22c55e, #4ade80);
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.note button:hover {
+  background: linear-gradient(to right, #16a34a, #22c55e);
+}
+
+.note button:last-child {
+  background: linear-gradient(to right, #f87171, #ef4444);
+}
+
+.note button:last-child:hover {
+  background: linear-gradient(to right, #dc2626, #b91c1c);
+}
+
+/* Subtle entry animation */
+@keyframes floatUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.note,
+.form-container {
+  animation: floatUp 0.6s ease-out both;
+}

@@ -1,0 +1,25 @@
+<h2>📝 My Notes</h2>
+
+<div class="form-container">
+  <input [(ngModel)]="title" placeholder="Enter note title..." />
+  <textarea [(ngModel)]="content" placeholder="Enter your note here..."></textarea>
+
+  <button (click)="addNote()">
+    {{ isEditing ? 'Update Note' : 'Add Note' }}
+  </button>
+
+  <button *ngIf="isEditing" (click)="resetForm()" style="margin-left: 1rem; background-color: #9ca3af;">
+    Cancel Edit
+  </button>
+</div>
+
+<div *ngIf="notes.length === 0" style="color: #6b7280; margin-top: 1rem;">
+  No notes yet. Start adding some!
+</div>
+
+<div *ngFor="let note of notes" class="note">
+  <h3>{{ note.title }}</h3>
+  <p>{{ note.content }}</p>
+  <button (click)="editNote(note.id)">✏️ Edit</button>
+  <button (click)="deleteNote(note.id)">🗑️ Delete</button>
+</div>
